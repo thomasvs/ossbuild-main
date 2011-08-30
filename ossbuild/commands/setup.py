@@ -85,7 +85,7 @@ class cmd_setup(Command):
               "https://mingw-w64.svn.sourceforge.net/svnroot/mingw-w64/trunk/mingw-w64-headers/direct-x/include "\
               "%s" % directx_headers
         buildscript.execute(shlex.split(cmd))
-        cmd = "svn checkout --trust-server-cert --non-interactive "\
+        cmd = "svn export --trust-server-cert --non-interactive "\
               "--no-auth-cache "\
               "https://mingw-w64.svn.sourceforge.net/svnroot/mingw-w64/trunk/mingw-w64-headers/crt/_mingw_unicode.h "\
               "%s" % os.path.join(directx_headers, '_mingw_unicode.h')
@@ -104,7 +104,11 @@ class cmd_setup(Command):
         path = load(MINGW_W32_i686_LINUX)
         mingw_root = self.mingw_root(os.path.join(config.prefix, '..'), 'w32')
         buildscript.set_action(_("Extracting %s") % os.path.basename(path), self)
-        unpack_tar_file(path, mingw_root)
+        try:
+            unpack_tar_file(path, mingw_root)
+        except OSError:
+            raise FatalError('Could not unpack %s to %s' % (path, mingw_root))
+
         buildscript.set_action(_("Fixing lib paths"), self)
         self.fix_lib_paths(buildscript, W32_i686_LINUX_SYSROOT,
                            os.path.join(mingw_root, 'i686-w64-mingw32', 'lib'),

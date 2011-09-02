@@ -12,7 +12,7 @@ modulesets_dir = os.path.join(os.environ['HOME'], '.ossbuild', 'modulesets')
 
 # what modules to build?
 moduleset = 'ossbuild'
-modules = []
+modules = ['meta-gstreamer', ]
 
 # the HOST for cross-compilation defined in .ossbuild/ossbuildenv
 # on ubuntu

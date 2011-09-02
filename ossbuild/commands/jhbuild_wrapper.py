@@ -18,11 +18,16 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import jhbuild.commands.base as jcommands
+import jhbuild.commands.bot as jbot
 #from jhbuild.commands.gui import cmd_gui as _cmd_gui
 from jhbuild.commands.info import cmd_info as _cmd_info
 from jhbuild.commands.bootstrap import cmd_bootstrap as _cmd_bootstrap
 from ossbuild.commands import register_command
 
+
+class cmd_bot(jbot.cmd_bot):
+    pass
+register_command(cmd_bot)
 
 class cmd_update(jcommands.cmd_update):
     pass

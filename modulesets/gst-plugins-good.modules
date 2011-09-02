@@ -7,7 +7,7 @@
   <autotools id="gst-plugins-good" autogenargs="--disable-dv1394 --disable-esdsink --disable-pulseaudio
                                                --disable-gst_v4l2 --disable-ximagesrc --disable-jack
                                                --disable-sunaudio --disable-oss4 --disable-oss
-                                               --disable-osx_audio --disable-osx_video --disable-libdv
+                                               --disable-osx_audio --disable-osx_video --disable-libdv --disable-aalib --disable-taglib
                                                --without-x"
              autogen-template="DIRECTSOUND_CFLAGS=-I%(prefix)s/include/DirectX DIRECSOUND_LDFLAGS=-L%(prefix)s/lib %(srcdir)s/%(autogen-sh)s --prefix %(prefix)s --libdir %(libdir)s %(autogenargs)s">
     <branch repo="gstreamer.freedesktop.org"

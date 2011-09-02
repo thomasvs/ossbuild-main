@@ -4,7 +4,7 @@
 <moduleset>
 
   <autotools id="libvpx" autogen-template="LD=$CC ./configure --prefix=%(prefix)s --libdir=%(libdir)s --as=yasm --target=x86-win32-gcc --enable-vp8 --enable-pic --enable-runtime-cpu-detect">
-    <branch module="/libvpx-v0.9.7-p1.tar.bz2" version="0.9.7-p1"
+    <branch module="libvpx-v0.9.7-p1.tar.bz2" version="0.9.7-p1"
             repo="webm.googlecode.com">
     </branch>
   </autotools>

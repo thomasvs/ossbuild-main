@@ -1,0 +1,4 @@
+- gst-plugins-good:
+  - taglib uses cmake, not sure how to crosscompile, disable for now
+  - aalib uses some gnu stubs that are missing
+- gtk: gdk-pixbuf-csource fails unless I use XDG_DATA_DIRS=/usr/sahre
